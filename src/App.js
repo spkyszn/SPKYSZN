@@ -85,12 +85,12 @@ export const ResponsiveWrapper = styled.div`
 //67 alignment of media row colum etc
 
 export const StyledLogo = styled.img`
-  align: center;
+  align: left;
   paddingTop:25px;
-  marginLeft:35px;
-  width: 500px;
+  paddingLeft: 20px;
+  width: 400px;
   @media (min-width:767px) {
-    width: 300px;
+    width: 250px;
   }
 
   transition: width 0.5s;
@@ -334,7 +334,7 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
         <s.SpacerLarge/>
         <s.SpacerLarge/>
        <s.Container  >
-    <StyledLogo style={{width:450}} src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
+    <StyledLogo style={{width:350}} src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
 
 <div style={window.innerWidth>=970 ? {height:1300} : {height:1300}}/>
         </s.Container>
