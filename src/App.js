@@ -82,7 +82,9 @@ export const ResponsiveWrapper = styled.div`
 //67 alignment of media row colum etc
 
 export const StyledLogo = styled.img`
-  width: 200px;
+  align: center;
+  paddingTop:50px;
+  width: 500px;
   @media (min-width:767px) {
     width: 300px;
   }
@@ -322,15 +324,15 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
         flex={1}
         ai={"center"}      //change placement of the logo (right = top left of page)
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={window.innerWidth >= 950 ? "./config/images/bg.png" : "./config/images/bg1.png"}
+        image={window.innerWidth >= 970 ? "./config/images/bg.png" : "./config/images/bg1.png"}
     
       >
         <s.SpacerLarge/>
         <s.SpacerLarge/>
-       <s.Container style={{paddingTop:0}} flex={1} ai={"center"} image={Window.innerWidth >= 950 ? "./config/images/Transparent.png" : "/config/images/logo.png" } >
-    
+       <s.Container  >
+    <StyledLogo style={{width:450}} src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
 
-<div style={window.innerWidth>=1250 ? {height:1300} : {height:1300}}/>
+<div style={window.innerWidth>=970 ? {height:1300} : {height:1300}}/>
         </s.Container>
    
           
