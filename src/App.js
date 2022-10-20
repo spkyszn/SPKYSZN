@@ -502,7 +502,7 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
                       }}
                       >
 
-                      {claimingNft ? "BUSY" : "BALLOON TOWN CLAIMS ONLY"}  
+                      {claimingNft ? "BUSY" : "B-TOWN CLAIMS"}  
                       </StyledButton>
                     ):null}
 
