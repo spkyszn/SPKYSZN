@@ -37,6 +37,9 @@ export const StyledButton = styled.button`
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
   }
+  @media (max-width: 767px) {
+    width: 200px;
+  }
 `;
 //16-adjustment for hight of connect button
 //19-adjust width of connect button
@@ -83,7 +86,8 @@ export const ResponsiveWrapper = styled.div`
 
 export const StyledLogo = styled.img`
   align: center;
-  paddingTop:50px;
+  paddingTop:25px;
+  marginLeft:35px;
   width: 500px;
   @media (min-width:767px) {
     width: 300px;
