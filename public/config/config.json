@@ -1,0 +1,22 @@
+{
+  "CONTRACT_ADDRESS": "0x04DFDF94c0E5e1D9101A6840e8476fBfCe3fE7EB",
+  "SCAN_LINK": "https://etherscan.io/address/0x04DFDF94c0E5e1D9101A6840e8476fBfCe3fE7EB",
+  "NETWORK": {
+    "NAME": "Ethereum",
+    "SYMBOL": "ETH",
+    "ID": 1
+  },
+  "NFT_NAME": "Spooky SZN",
+  "SYMBOL": "SPKYSZN",
+  "MAX_SUPPLY": 6666,
+  "WEI_COST": 0,
+  "DISPLAY_COST": 0,
+  "GAS_LIMIT": 140000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/spooky-szn-official",
+  "SHOW_BACKGROUND": true,
+  "PhaseClaim": true,
+  "PhaseWL": false,
+  "PhasePublic": false,
+  "MaxMintAmount":10
+}
