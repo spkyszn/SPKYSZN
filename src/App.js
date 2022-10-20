@@ -5,8 +5,7 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import Whitelist from "./WL/Addresses.json"; 
-import webBG from"./image/bg.png";
-import mobileBG from "./image/bg1.png";
+
 
 //merkle management
 import { utils } from 'ethers';
@@ -148,7 +147,7 @@ function App() {
     MaxMintAmount:1
   });
 
-  const imageUrl = window.innerWidth >= 650 ? webBG : mobileBG;
+
   //Merkle root management
 //current user proof called when mint
 let currentProof='';
