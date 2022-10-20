@@ -327,7 +327,7 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
       >
         <s.SpacerLarge/>
         <s.SpacerLarge/>
-       <s.Container style={{paddingTop:100}} flex={1} ai={"center"} image={Window.innerWidth >= 950 ? "./config/images/Transparent.png" : "/config/images/logo.png" } >
+       <s.Container style={{paddingTop:0}} flex={1} ai={"center"} image={Window.innerWidth >= 950 ? "./config/images/Transparent.png" : "/config/images/logo.png" } >
     
 
 <div style={window.innerWidth>=1250 ? {height:1300} : {height:1300}}/>
