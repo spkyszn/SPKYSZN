@@ -16,7 +16,7 @@
   "MARKETPLACE_LINK": "https://opensea.io/collection/spooky-szn-official",
   "SHOW_BACKGROUND": true,
   "PhaseClaim": true,
-  "PhaseWL": true,
+  "PhaseWL": false,
   "PhasePublic": false,
   "MaxMintAmount":10
 }
