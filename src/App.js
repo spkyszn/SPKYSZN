@@ -4,7 +4,9 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
-import Whitelist from "./WL/Addresses.json";
+import Whitelist from "./WL/Addresses.json"; 
+import webBG from"./image/bg.png";
+import mobileBG from "./image/bg1.png";
 
 //merkle management
 import { utils } from 'ethers';
@@ -26,7 +28,7 @@ export const StyledButton = styled.button`
   font-weight: bold;
   font-size: 20px;
   color: var(--secondary-text);
-  width: 350px;                                                       
+  width: 250px;                                                       
   cursor: pointer;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -82,8 +84,8 @@ export const ResponsiveWrapper = styled.div`
 
 export const StyledLogo = styled.img`
   width: 200px;
-  @media (min-width:300px) {
-    width: 250px;
+  @media (min-width:767px) {
+    width: 300px;
   }
 
   transition: width 0.5s;
@@ -99,8 +101,8 @@ export const StyledImg = styled.img`
   width: 200px;
   padding:10px;
   margin:10px;
-  @media (min-height: 900px) {
-    height: 300px;
+  @media (min-width: 900px) {
+    width: 250px;
   }
   @media (min-width: 1000px) {
     width: 300px;
@@ -146,7 +148,7 @@ function App() {
     MaxMintAmount:1
   });
 
-
+  const imageUrl = window.innerWidth >= 650 ? webBG : mobileBG;
   //Merkle root management
 //current user proof called when mint
 let currentProof='';
@@ -321,11 +323,17 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
         flex={1}
         ai={"center"}      //change placement of the logo (right = top left of page)
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        image={window.innerWidth >= 950 ? "./config/images/bg.png" : "./config/images/bg1.png"}
+    
       >
+        <s.SpacerLarge/>
+        <s.SpacerLarge/>
+       <s.Container style={{paddingTop:350}} flex={1} ai={"center"} image={Window.innerWidth >= 950 ? "./config/images/Transparent.png" : "/config/images/logo.png" } >
+    
 
-<div style={{height:1300}}/>
-        
+<div style={window.innerWidth>=1250 ? {height:1300} : {height:1300}}/>
+        </s.Container>
+   
           
           <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
@@ -575,7 +583,7 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
             - The Minting Process will consist of Claims "1 for 1" (21st 11am EST), Whitelist "3 per WL address" (22nd 11am EST), and Public "5 per transaction" (23rd 11am EST) -
           </s.TextDescription>
         </s.Container>
-     <div style={{height: 2600}}/>
+     <div style={window.innerWidth>=1050 ? {height: 2600} : {height: 2600}}/>
     
 
       </s.Container>
