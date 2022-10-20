@@ -1,0 +1,140 @@
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+ParentClaimNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "Claim with BT"}  
+</StyledButton>
+
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+WLNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "BUY WL"}
+</StyledButton>        
+
+
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+claimNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "BUY PUBLIC"}  
+</StyledButton>
+
+
+
+
+
+
+
+
+
+
+buttons with show conditions
+
+
+
+
+{CONFIG.PhaseClaim == true ? (     
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+ParentClaimNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "Claim with BT"}  
+</StyledButton>
+    ): null}
+
+{CONFIG.PhaseWL == true ? (     
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+WLNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "BUY WL"}
+</StyledButton>        
+): null}
+
+
+{CONFIG.PhasePublic == true ? (  
+<StyledButton
+disabled={claimingNft ? 1 : 0}
+onClick={(e) => {
+e.preventDefault();
+claimNFTs();
+getData();
+}}
+>
+
+{claimingNft ? "BUSY" : "BUY PUBLIC"}  
+</StyledButton>
+): null}
+
+
+
+
+
+
+
+wl mint function
+
+
+
+
+//Mint NFTs with Merkle proof
+const WLNFTs = () => {
+  let cost = CONFIG.WEI_COST;
+  let gasLimit = CONFIG.GAS_LIMIT;
+  let totalCostWei = String(cost * mintAmount);
+  let totalGasLimit = String(gasLimit +((gasLimit* mintAmount)*.2));
+  console.log("Cost: ", totalCostWei);
+  console.log("Gas limit: ", totalGasLimit);
+  setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+  setClaimingNft(true);
+  merkle();
+  if(claimNFTs){
+  blockchain.smartContract.methods.whitelistMint(mintAmount,currentProof)
+    .send({
+      gasLimit: String(totalGasLimit),
+      to: CONFIG.CONTRACT_ADDRESS,
+      from: blockchain.account,
+      value: totalCostWei,
+    })
+    
+    .once("error", (err) => {
+      console.log(err);
+      setFeedback("Sorry, something went wrong please try again later.");
+      setClaimingNft(false);
+    })
+    .then((receipt) => {
+      console.log(receipt);
+      setFeedback(
+        `Congratulations, the ${CONFIG.NFT_NAME} is now all yours! go visit Opensea.io to see your new NFT!.`
+      );
+      setClaimingNft(false);
+      dispatch(fetchData(blockchain.account));
+    });
+  }
+};
