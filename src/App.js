@@ -334,7 +334,7 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
         <s.SpacerLarge/>
         <s.SpacerLarge/>
        <s.Container  >
-    <StyledLogo  src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
+    <StyledLogo  src={window.innerWidth>=970 ? null : "./config/images/logo.png"}/>
 
 <div style={window.innerWidth>=970 ? {height:900} : {height:900}}/>
         </s.Container>
