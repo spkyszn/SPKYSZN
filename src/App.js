@@ -75,7 +75,7 @@ export const ResponsiveWrapper = styled.div`
   flex-direction: column;
   justify-content: stretched;
   align-items: stretched;
-  width: 80%;
+  width: 100%;
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -88,9 +88,9 @@ export const StyledLogo = styled.img`
   align: left;
   paddingTop:25px;
   paddingLeft: 20px;
-  width: 400px;
+  width: 100%;
   @media (min-width:767px) {
-    width: 250px;
+    width: 100%;
   }
 
   transition: width 0.5s;
@@ -334,9 +334,9 @@ const rootHash = '0x' + merkleTree.getRoot().toString('hex');
         <s.SpacerLarge/>
         <s.SpacerLarge/>
        <s.Container  >
-    <StyledLogo style={{width:350}} src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
+    <StyledLogo  src={window.innerWidth>=970 ? "./config/images/Transparent.png" : "./config/images/logo.png"}/>
 
-<div style={window.innerWidth>=970 ? {height:1300} : {height:1300}}/>
+<div style={window.innerWidth>=970 ? {height:900} : {height:900}}/>
         </s.Container>
    
           
